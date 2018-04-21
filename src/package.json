@@ -49,9 +49,22 @@
     "whatwg-fetch": "1.0.0"
   },
   "dependencies": {
+    "axios": "^0.17.1",
+    "buffer": "^5.1.0",
     "dotenv": "^2.0.0",
+    "font-awesome": "^4.7.0",
+    "ipfs-api": "^18.0.0",
+    "jquery": "^3.3.1",
+    "jquery-ui": "^1.12.1",
+    "jquery-ui-bundle": "^1.12.1-migrate",
+    "materialize": "^1.0.0",
+    "materialize-css": "^0.100.2",
     "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-toastify": "^3.3.4",
+    "react-transitions": "^1.0.0"
   },
   "scripts": {
     "start": "node scripts/start.js",
