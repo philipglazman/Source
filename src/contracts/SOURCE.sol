@@ -3,25 +3,7 @@ pragma solidity ^0.4.18;
 /**
 * ERC-271 NFT Standard
 */
-contract ERC271 {
-    function totalSupply() public view returns (uint256);
-    function tokenOfOwnerByIndex(address _owner, uint256 _index) public view returns (uint256 _tokenId);
-    function tokenByIndex(uint256 _index) public view returns (uint256);
-}
-
-/**
-* ERC-271 NFT Standard, Metadata
-*/
-contract ERC271MetaData {
-    function name() public view returns (string _name);
-    function tokenURI(uint256 _tokenId) public view returns (string);
-}
-
-/**
-* Contains all constants, data types, and basic functionality.
-*/
-contract SourceBase {
-
+contract SOURCE {
     /**
     * RepId - Reputation identifier. It is the relationship between party A and party B. 
     */
@@ -114,18 +96,12 @@ contract SourceBase {
         _reputation.trustScore = uint32(_trustScore);
         _reputation.patienceScore = uint32(_patienceScore);
         
-        uint256 repId = reputations.push(_reputation);
+        uint256 repId = reputations.push(_reputation) - 1;
 
-        _transfer(0,_owner, repId);
+        _transfer(address(0),_owner, repId);
 
         return repId;
     }
-}
-
-/**
-* /contains basic NFT transaction functionality. 
-*/
-contract SourceOwnership is SourceBase,ERC271 {
 
     string public constant name = "SOURCE";
     
@@ -138,9 +114,6 @@ contract SourceOwnership is SourceBase,ERC271 {
         _removeReputationFrom(msg.sender, _RepId);
         _transfer(msg.sender, address(0), _RepId);
     }
-}
-
-contract SourceCode is SourceOwnership {
 
     // Sets the reputation of _to according to the scores.
     function setReputation(address _to, uint32 _healthScore, uint32 _trustScore, uint32 _patienceScore)  external
@@ -164,9 +137,29 @@ contract SourceCode is SourceOwnership {
         _transfer(msg.sender,_to,repId);
     }
 
+    function getReputionIdWithAddress(address _owner) view external returns (uint256[])
+    {
+        return ownerToReputations[_owner];
+        // uint256[] storage allRepIds = ownerToReputations[_owner];
 
-    // @TODO - make only owner get any reputation relationship
-    function getReputation(uint256 _RepId) view external 
+        // uint256[] memory repIds;
+        // uint index = 0;
+
+        // for(uint i = 0; i < allRepIds.length; i++)
+        // {
+        //     if(allRepIds[i] != 0)
+        //     {   
+        //         repIds[index] = allRepIds[i];
+        //         index++;
+        //         //repIds.push(allRepIds[i]);
+        //     }
+        // }
+        // return repIds;
+    }
+
+    // function requestReputation(address _endorser) {}
+
+    function getReputationWithId(uint256 _RepId) view external 
     returns 
     (uint64 _creationTime, uint32 _healthScore, uint32 _trustScore, uint32 _patienceScore)
     {
