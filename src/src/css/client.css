@@ -1,0 +1,138 @@
+.feat-area-bg {
+    height: 32em;
+    background: -moz-linear-gradient(-45deg, #ffffff 0%, #f6f6f6 47%, #ededed 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    background-image: url("../design/blockchain.png"); 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.feat-header-section {
+    margin-top: 1.3em !important;
+    padding: 0.3em !important;
+}
+.feat-header-body {
+    height: 5em;
+    background-color: rgb(238, 242, 164) !important;
+}
+.feat-header-img {
+    width: 4.5em;
+    margin-top: 0.2em;
+}
+.feat-header-text {
+    color: #62c4c4;
+    font-size: 1.75em;
+    margin-top: 0.75em;
+    display: block;
+    font-weight: 400 !important;
+}
+
+.feat-bot-pic-block {
+    position: absolute;
+    bottom: 15%;
+    left: 30%;
+}
+.feat-bot-pic-img {
+    width: 80%;
+    display: block;
+    margin-bottom: -8em;
+}
+
+.single-feat-block {
+    margin: 0.3em;
+    list-style-type: none;
+    height: 8em;
+    cursor: pointer;
+    font-size: 1.10em;
+    border: 0.08em solid rgb(200, 178, 211) !important;
+    line-height: 1.34em;
+    color: rgb(68, 57, 73);
+}
+.single-feat-block:hover {
+    background-color: rgb(196, 221, 219);
+}
+
+.list-of-feats-block {
+    padding: 0.15em !important;
+    border: 0.02em solid #bfc0c5;
+    background-color: rgba(143, 39, 39, 0) !important;
+}
+.list-of-feats-section {
+    background-color: rgba(143, 39, 39, 0) !important;
+    list-style-type: none;
+    height: 20em;
+    padding: 0.15em;
+    font-size: 1.05em;
+}
+.list-of-feats-text {
+    font-size: 1.65em;
+    text-align: center;
+    color: white;
+    background-color: rgb(105, 184, 147) !important;
+}
+
+.list-of-feats-block {
+    padding: 0.15em !important;
+    border: 0.02em solid #bfc0c5;
+    background-color: rgba(143, 39, 39, 0) !important;
+}
+.list-of-feats-section {
+    background-color: rgba(143, 39, 39, 0) !important;
+    list-style-type: none;
+    height: 20em;
+    padding: 0.15em;
+    font-size: 1.05em;
+}
+.list-of-feats-text {
+    font-size: 1.65em;
+    text-align: center;
+    color: white;
+    background-color: rgb(171, 130, 190) !important;
+}
+.list-of-grants-block {
+    padding: 0.15em !important;
+    border: 0.02em solid #bfc0c5;
+    background-color: rgba(143, 39, 39, 0) !important;
+}
+.list-of-grants-section {
+    background-color: rgba(143, 39, 39, 0) !important;
+    list-style-type: none;
+    height: 15.5em;
+    padding: 0.15em;
+    font-size: 1.05em;
+}
+.list-of-grants-text {
+    font-size: 1.65em;
+    text-align: center;
+    color: white;
+    background-color: rgb(119, 184, 204) !important;
+}
+
+.single-feat-text {
+    color: rgb(153, 159, 161);
+}
+.single-feat-add-text {
+    color: rgb(138, 76, 130);
+    display: inline;
+    margin-left: 1em;
+}
+.single-feat-section {
+    margin-top: 1em;
+}
+
+.grants-list-section {
+    margin: 0.3em;
+    list-style-type: none;
+    height: 5em;
+    cursor: pointer;
+    font-size: 0.92em;
+    margin-top: 0.2em;
+    padding-top: 0.94em;
+    border: 0.08em solid rgb(88, 170, 190) !important;
+    line-height: 1.34em;
+    color: rgb(88, 170, 190);
+}

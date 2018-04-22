@@ -4,6 +4,9 @@ import { Route } from 'react-router-dom';
 import getWeb3 from './utils/getWeb3'
 
 import Home from './pages/Home';
+import Lender from './pages/Lender';
+import Applicant from './pages/Applicant';
+import Client from './pages/Client';
 
 import './css/index.css';
 
@@ -21,6 +24,9 @@ class App extends Component {
   routeRender() {
     switch (this.props.match.url) {
       case "/": return( <Route path="/" component={ Home } />);
+      case "/sender": return( <Route path="/lender" component={ Lender } />);
+      case "/applicant": return( <Route path="/applicant" component={ Applicant } />);
+      case "/client": return( <Route path="/client" component={ Client } />);
       default: break;
     }
   }
