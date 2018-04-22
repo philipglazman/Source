@@ -1,0 +1,179 @@
+.grant-area-bg {
+    height: 66em;
+    background: #156ab5; /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #156ab5 1%, #002e3d 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #156ab5 1%,#002e3d 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #156ab5 1%,#002e3d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#156ab5', endColorstr='#002e3d',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+.sender-area-bg {
+    height: 66em;
+    background-color: rgb(121, 191, 169);
+}    
+
+.teal-color {
+    color: #33cccc;
+}
+
+.grant-header-top {
+    background-color: #33cccc;
+    height: 1.25em;
+}
+.circle-teal-one {
+	width: 1.5em;
+	height: 1.5em;
+	background: #8dd8d8;
+	-moz-border-radius: 1.5em;
+	-webkit-border-radius: 1.5em;
+    border-radius: 1.5em;
+    margin-top: -2.05em;
+    margin-left: -1.55em;
+}
+
+/* header card css */
+.grant-header-card {
+    background-color: rgba(143, 39, 39, 0) !important;
+    margin-top: 1.75em !important;
+    height: 9em;
+    border: 0.05em solid #33cccc;
+}
+.grant-header-text {
+    color: #eecd94;
+    /* color: #a9dede; */
+    margin-top: 1.25em;
+    margin-left: -0.75em;
+    font-size: 1.85em;
+}
+.grant-header-logo3 {
+    margin-top: 1em;
+    width: 5em;
+}
+.grant-header-card:after {
+    content:"";
+    position: absolute;
+    z-index: -10;
+    top: 101.6%;
+    bottom: 0;
+    left: 24%;
+    border-left: 0.1em dotted #33cccc;
+    height: 3.3em;
+    font-size: 1.5em;
+
+    -webkit-animation: fadein 2s; 
+    -moz-animation: fadein 2s;
+     -ms-animation: fadein 2s; 
+      -o-animation: fadein 2s; 
+         animation: fadein 2s;
+}
+
+.grant-body-form {
+    padding-top: 1em;
+}
+.grant-body-card {
+    background-color: rgba(143, 39, 39, 0) !important;
+    margin-top: 2.75em !important;
+    /* height: 24em; */
+    border: 0.05em solid #33cccc;
+}
+.grant-body-card-first {
+    background-color: #23739b;
+    border: 0.05em solid #33cccc;
+    margin-bottom: 0 !important;
+}
+.grant-body-card-first input {
+    color: rgb(215, 183, 223) !important;
+}
+
+.grant-body-card-second {
+    background-color: #003366;
+    border: 0.05em solid #33cccc;
+    margin-bottom: 0 !important;
+}
+.grant-body-card-second input {
+    color: rgb(235, 208, 161) !important;
+}
+.grant-body-card-third {
+    margin-bottom: 0 !important;
+    border: 0.05em solid #33cccc;
+}
+.grant-body-card-fourth {
+    background-color: rgba(143, 39, 39, 0) !important;
+    border: 0.05em solid #33cccc;
+    margin-bottom: 0 !important;
+}
+.grant-body-card-fifth {
+    border: 0.05em solid #33cccc;
+    margin-bottom: 0 !important;
+}
+
+.grant-submit-card {
+    background-color: rgba(143, 39, 39, 0) !important;
+    margin-top: 9.25em !important;
+    height: 18em;
+    border: 0.05em solid #33cccc;
+}
+.grant-submit-bar {
+    margin-top: 1em;
+    padding-top: 0.63em;
+    height: 3.25em;
+    background-color: #33cccc;
+}
+.gear-icon {
+    color: #003366;
+    font-size: 2.22em !important;
+}
+.grant-submit-block {
+    margin-top: 5em;
+    text-align: center;
+}
+.click-sumbit-text {
+    margin-top: 0.15em;
+    font-size: 1.25em;
+}
+.grant-submit-block:after {
+    content:"";
+    position: absolute;
+    z-index: -10;
+    top: -64.2%;
+    bottom: 0;
+    left: 14%;
+    border-left: 0.1em dotted #33cccc;
+    height: 7.6em;
+    font-size: 1.5em;
+
+    -webkit-animation: fadein 2s; 
+    -moz-animation: fadein 2s;
+     -ms-animation: fadein 2s; 
+      -o-animation: fadein 2s; 
+         animation: fadein 2s;
+}
+
+.circle-gold-one {
+	width: 1.5em;
+	height: 1.5em;
+	background: #f4fcad;
+	-moz-border-radius: 0.15em;
+	-webkit-border-radius: 0.15em;
+    border-radius: 0.15em;
+    margin-top: -2.05em;
+    margin-left: -1.55em;
+}
+.grant-submit-square {
+    position: absolute;
+    top: 66%;
+    left: 20%;
+    background-color: rgb(247, 231, 141) !important;
+    cursor: pointer;
+}
+.ipfs-btn {
+    visibility: hidden;
+}
+
+.input-field label {
+    color: white !important;
+    font-size: 1.25em !important;
+}
+input {
+    color: rgb(255, 135, 23) !important;
+}

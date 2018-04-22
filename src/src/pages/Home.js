@@ -13,7 +13,7 @@ class Home extends Component {
     $('html,body').animate({ scrollTop: 0 }, 'slow');
   }
   scrollDown() {
-    $('html,body').animate({ scrollTop: 650 }, 'slow');
+    $('html,body').animate({ scrollTop: 1000 }, 'slow');
   }
 
   render() {
@@ -24,11 +24,11 @@ class Home extends Component {
         <div className="home-background-color">
             <div className="row">
                 <div className="col s12 m12 home-splash-block">
-                    <img src={splashImg} className="home-splash-img card moveFromTopFade" />
+                    <img src={splashImg} className="home-splash-img card moveFromTopFade" onClick={() => this.scrollDown()} />
                     <div className="row">
                         <div className="col s1 m1" />
                         <div className="col s10 m10">
-                            <div className="home-title-main-text moveFromTopFade delay300">
+                            <div className="home-title-main-text moveFromTopFade">
                             A distributed reputation platform
                             </div>
                         </div>
@@ -58,15 +58,43 @@ class Home extends Component {
                 </div>
             </div>
             <div className="col s5 m5">
+                <Link to="/lender">
                 <div className="home-nav-card">
-                    <div className="home-nav-box-top">Reputation Health Score</div>
+                    <div className="home-nav-box-top">Lenders Page</div>
                     <div className="home-page-rep-main-text">
                         <div className="row">
                             <div className="col s2 m2"><i className="home-page-icon fa fa-pencil-square" aria-hidden="true"></i></div>
-                            <div className="col s10 m10">Ask endorser to judge health choices of individual</div>
+                            <div className="col s10 m10">Lenders choose the metadata they deem most relevant to calculate the SOURCE score. A template is generated for the endorser to populate, an endorsement token is minted, and a QR code is transmitted to the endorser’s device</div>
                         </div>
                     </div>
                 </div>
+                </Link>
+                <div className="home-link-bar" />
+                
+                <Link to="/applicant">
+                <div className="home-end-card">
+                    <div className="home-end-box-top">Applicant Page</div>
+                    <div className="home-page-end-main-text">
+                        <div className="row">
+                            <div className="col s2 m2"><i className="home-end-page-icon fa fa-address-card" aria-hidden="true"></i></div>
+                            <div className="col s10 m10">The Applicant scans the QR code on their device to request a token from the lender</div>
+                        </div>
+                    </div>
+                </div>
+                </Link>
+
+                <div className="home-link-bar" />
+
+                <div className="home-client-card">
+                    <div className="home-client-box-top">Client Page</div>
+                    <div className="home-page-client-main-text">
+                        <div className="row">
+                            <div className="col s2 m2"><i className="home-client-page-icon fa fa-file-text-o" aria-hidden="true"></i></div>
+                            <div className="col s10 m10">A global database of SOURCE scores is created and stored publicly, enabling the generation of meaningful reports</div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
             <div className="col s1 m1" />
         </div>
