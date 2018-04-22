@@ -5,50 +5,65 @@ import { ToastContainer, toast } from 'react-toastify';
 import '../css/lender.css';
 import logoImg from '../design/logo.png';
 
-import getWeb3 from './../utils/getWeb3'
+import Web3 from 'web3';
 let contractAbi = require("../../build/contracts/SOURCE.json");
 
 class Lender extends Component {
 
   constructor(props) {
     super(props);
+    
+    this.connectWeb3 = this.connectWeb3.bind(this);
+    this.makeToken = this.makeToken.bind(this);
     this.state = {
-        web3: null,
-        tokenContract: null
+      web3: new Web3(new Web3(window.web3.currentProvider)),
+      tokenContract: this.connectWeb3()
     };
-    
-    getWeb3.then(results => {
-      this.setState({
-        web3: results.web3
-      });
-      
-      console.log(this.state.web3);
-      
-      if(this.state.web3) {
-        console.log("import contract")
-        var token = this.state.web3.eth.contract(contractAbi).at("0x8f0483125fcb9aaaefa9209d8e9d7b9c8b9fb90f");
-        console.log(token);
-        this.setState({tokenContract: token});
-      }
-    
-    }).catch(() => {
-        console.log('Error finding web3.')
-    });
   }
 
+  connectWeb3(){
+    let web3 = new Web3(new Web3(window.web3.currentProvider));
+    let contractAddress = "0x345cA3e014Aaf5dcA488057592ee47305D9B3e10"
+    const contract = new web3.eth.Contract([{"constant":true,"inputs":[],"name":"name","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_RepId","type":"uint256"}],"name":"expireReputation","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"_RepId","type":"uint256"}],"name":"getReputationWithId","outputs":[{"name":"_creationTime","type":"uint64"},{"name":"_healthScore","type":"uint32"},{"name":"_trustScore","type":"uint32"},{"name":"_patienceScore","type":"uint32"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_to","type":"address"},{"name":"_healthScore","type":"uint32"},{"name":"_trustScore","type":"uint32"},{"name":"_patienceScore","type":"uint32"}],"name":"setReputation","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"_owner","type":"address"}],"name":"getReputionIdWithAddress","outputs":[{"name":"","type":"uint256[]"}],"payable":false,"stateMutability":"view","type":"function"},{"anonymous":false,"inputs":[{"indexed":false,"name":"_from","type":"address"},{"indexed":false,"name":"_to","type":"address"},{"indexed":false,"name":"_RepId","type":"uint256"}],"name":"Transfer","type":"event"}],contractAddress);
+    return contract;
+    
+  }
   componentDidMount() {
     $('html,body').animate({ scrollTop: 0 }, 'slow');
   }
+  
   makeToken() {
-      this.state.tokenContract.setReputation.call("0xf17f52151EbEF6C7334FAD080c5704D77216b732", 1,1,1, (result) => {
-        console.log(result);
-      })
+      console.log(this.state.tokenContract);
+      console.log(this.state.tokenContract.options.address);
+      let fromAddress = "0x627306090abaB3A6e1400e9345bC60c78a8BEf57"
+      this.state.tokenContract.methods.name().call();
+      this.state.tokenContract.methods.setReputation("0xf17f52151EbEF6C7334FAD080c5704D77216b732",1,2,3).send({from: fromAddress,gas: 1000000})
+        .on('receipt', function(receipt){
+          console.log(receipt);
+        });
+
+      // this.state.tokenContract.setReputation.call("0xf17f52151EbEF6C7334FAD080c5704D77216b732", 1,1,1, (result) => {
+      //   console.log(result);
+      // })
+      setTimeout(() => {
+        let msg = 'Success! ERC 721 Token Minted!';
+        // let txMsg = "tx:" + inputObj.tx ;
+        let txMsg = "0x8f0483125fcb9aaaefa9209d8e9d7b9c8b9fb90f";
+        // let hash = "blockHash:" + inputObj.receipt.blockHash;
+        let hash = "blockHash: 0x36e49d21956c79c3d...";
+        toast.success(msg, {
+            position: toast.POSITION.TOP_CENTER
+        });
+        toast.warn(hash, {
+            position: toast.POSITION.TOP_CENTER
+        });
+      }, 10000)
   }
 
     render() {
         return (
           <div className="grant-area-bg">
-            {/* <ToastContainer autoClose={100000} /> */}
+            <ToastContainer autoClose={10000} />
 
             {/* grant header */}
             <div className="grant-header-block moveFromTopFade">

@@ -3055,8 +3055,8 @@
           }
         ],
         "contractDependencies": [
-          226,
-          23
+          23,
+          226
         ],
         "contractKind": "contract",
         "documentation": "/contains basic NFT transaction functionality. ",
@@ -3561,8 +3561,8 @@
           }
         ],
         "contractDependencies": [
-          226,
           23,
+          226,
           263
         ],
         "contractKind": "contract",
@@ -8176,8 +8176,8 @@
           }
         ],
         "contractDependencies": [
-          226,
-          23
+          23,
+          226
         ],
         "contractKind": "contract",
         "documentation": "/contains basic NFT transaction functionality. ",
@@ -8682,8 +8682,8 @@
           }
         ],
         "contractDependencies": [
-          226,
           23,
+          226,
           263
         ],
         "contractKind": "contract",
@@ -10419,5 +10419,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.0",
-  "updatedAt": "2018-04-22T11:00:53.103Z"
+  "updatedAt": "2018-04-22T14:14:29.291Z"
 }

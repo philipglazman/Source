@@ -17,7 +17,7 @@
 }
 .feat-header-body {
     height: 5em;
-    background-color: rgb(238, 242, 164) !important;
+    background-color: rgb(202, 85, 187) !important;
 }
 .feat-header-img {
     width: 4.5em;
@@ -135,4 +135,11 @@
     border: 0.08em solid rgb(88, 170, 190) !important;
     line-height: 1.34em;
     color: rgb(88, 170, 190);
+}
+
+.client-search-btn {
+    margin-top: 3.25em;
+}
+.client-data-section {
+    visibility: hidden;
 }

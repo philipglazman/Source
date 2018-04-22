@@ -84,7 +84,8 @@ class Home extends Component {
                 </Link>
 
                 <div className="home-link-bar" />
-
+                
+                <Link to="/client">
                 <div className="home-client-card">
                     <div className="home-client-box-top">Client Page</div>
                     <div className="home-page-client-main-text">
@@ -94,6 +95,7 @@ class Home extends Component {
                         </div>
                     </div>
                 </div>
+                </Link>
 
             </div>
             <div className="col s1 m1" />
