@@ -1,0 +1,19 @@
+.home-page {
+    height: 80em;
+}
+.home-background-color {
+    height: 50em;
+    background: #67B26F;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4ca2cd, #67B26F);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4ca2cd, #67B26F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.home-splash-block {
+    margin-top: 0.5em;
+    /* width: 42em; */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+.home-splash-img {
+    width: 70%;
+}
