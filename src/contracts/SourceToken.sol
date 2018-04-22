@@ -23,14 +23,17 @@ contract ERC271MetaData {
 contract SourceBase {
 
     /**
-    * @var RepId - Reputation identifier. It is the relationship between party A and
-    *              party B. It is the concatenation of party A and party B 40 char addresses.
+    * RepId - Reputation identifier. It is the relationship between party A and party B. 
     */
 
-    /* Events */
+    /***
+    Events 
+    ***/
     event Transfer(address _from, address _to, uint256 _RepId);
 
-    /* Data Types */
+    /***
+    Data Types 
+    ***/
 
     struct Reputation 
     { 
@@ -50,17 +53,25 @@ contract SourceBase {
     Reputation[] reputations;
 
     // Mapping that counts the number of reputations a person has. 2^32 is maximum reputation.
-    mapping (address => uint256) ownershipReputationsCount;
+    mapping (address => uint256) internal ownershipReputationsCount;
+
+    // Mapping each user to list of reputations.
+    mapping (address => Reputation[]) internal ownerToReputations;
 
     // Maps reputation id to owner.
-    mapping (uint256 => address) public reputationToOwner;
+    mapping (uint256 => address) internal reputationToOwner;
 
     // Mapping from Rep ID to index of the owner tokens list 
     mapping(uint256 => uint256) internal ownedReputationsIndex; 
     
-    //Mapping from Rep ID id to position in the allTokens array 
+    // Mapping from Rep ID id to position in the allTokens array 
     mapping(uint256 => uint256) internal allReputationsIndex;
 
+    /*** 
+    Utility Functions
+    ***/
+
+    // Transfers reputation from user to another user.
     function _transfer(address _from,address _to,uint256 _RepId) internal
     {
         ownershipReputationsCount[_to]++;
@@ -70,7 +81,8 @@ contract SourceBase {
         emit Transfer(_from,_to,_RepId);
     }
 
-    function _owns(address _owner, uint256 _RepId) internal returns (bool) 
+    // 
+    function _owns(address _owner, uint256 _RepId) view internal returns (bool) 
     {
         return reputationToOwner[_RepId] == _owner;
     }
@@ -81,16 +93,19 @@ contract SourceBase {
         reputationToOwner[_RepId] = address(0);
     }
 
-    function _createReputation(address _owner, uint32 _healthScore, uint32 _trustScore, uint32 _patienceScore) internal returns (uint)
+    function _createReputation(address _owner, uint32 _healthScore, uint32 _trustScore, uint32 _patienceScore) view internal returns (uint)
     {
         Reputation memory _reputation;
         
-        _reputation.creationTime = uint64(now);
+        _reputation.creationTime = uint64(block.timestamp);
         _reputation.healthScore = uint32(_healthScore);
         _reputation.trustScore = uint32(_trustScore);
         _reputation.patienceScore = uint32(_patienceScore);
         
         uint256 repId = reputations.push(_reputation)-1;
+
+        // @TODO - change 0 to something else, original owner.
+        _transfer(0,_owner, repId);
 
         return repId;
     }
@@ -133,7 +148,17 @@ contract SourceMinting is SourceOwnership {
 
 contract SourceCode is SourceMinting {
 
-    // function getReputation()
-    // {
-    // }
+    // @TODO - make only owner get any reputation relationship
+    function getReputation(uint256 _RepId) view external 
+    returns 
+    (uint64 _creationTime, uint32 _healthScore, uint32 _trustScore, uint32 _patienceScore)
+    {
+        Reputation storage _reputation = reputations[_RepId];
+
+        _creationTime = _reputation.creationTime;
+        _healthScore = _reputation.healthScore;
+        _trustScore = _reputation.trustScore;
+        _patienceScore = _reputation.patienceScore;        
+    }
+
 }
