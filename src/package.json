@@ -64,7 +64,8 @@
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "react-toastify": "^3.3.4",
-    "react-transitions": "^1.0.0"
+    "react-transitions": "^1.0.0",
+    "web3": "^1.0.0-beta.34"
   },
   "scripts": {
     "start": "node scripts/start.js",

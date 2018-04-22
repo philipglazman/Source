@@ -5,10 +5,44 @@ import { ToastContainer, toast } from 'react-toastify';
 import '../css/lender.css';
 import logoImg from '../design/logo.png';
 
+import getWeb3 from './../utils/getWeb3'
+let contractAbi = require("../../build/contracts/SOURCE.json");
+
 class Lender extends Component {
-  
+
+  constructor(props) {
+    super(props);
+    this.state = {
+        web3: null,
+        tokenContract: null
+    };
+    
+    getWeb3.then(results => {
+      this.setState({
+        web3: results.web3
+      });
+      
+      console.log(this.state.web3);
+      
+      if(this.state.web3) {
+        console.log("import contract")
+        var token = this.state.web3.eth.contract(contractAbi).at("0x8f0483125fcb9aaaefa9209d8e9d7b9c8b9fb90f");
+        console.log(token);
+        this.setState({tokenContract: token});
+      }
+    
+    }).catch(() => {
+        console.log('Error finding web3.')
+    });
+  }
+
   componentDidMount() {
     $('html,body').animate({ scrollTop: 0 }, 'slow');
+  }
+  makeToken() {
+      this.state.tokenContract.setReputation.call("0xf17f52151EbEF6C7334FAD080c5704D77216b732", 1,1,1, (result) => {
+        console.log(result);
+      })
   }
 
     render() {
@@ -65,7 +99,6 @@ class Lender extends Component {
                     <div className="col s1 m1">
                         <form id='captureMedia' action="#" onSubmit={()=>{}}>
                             <div className="file-field input-field">
-                              <input id="ipfs-btn" type='file' onChange={()=>{}} />
                             </div>
                         </form>
                     </div>
@@ -136,8 +169,8 @@ class Lender extends Component {
                   </div>
     
                   <div className="grant-submit-block">
-                    <div className="circle-gold-one grant-submit-square" onClick={() => {}} />
-                    <a className="waves-effect waves-light btn" onClick={() => {}}>Create Reputation Token</a>
+                    <div className="circle-gold-one grant-submit-square" />
+                    <a className="waves-effect waves-light btn" onClick={()=>{this.makeToken()}}>Create Reputation Token</a>
                   </div> 
     
                 </div>
