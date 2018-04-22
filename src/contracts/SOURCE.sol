@@ -137,28 +137,15 @@ contract SOURCE {
         _transfer(msg.sender,_to,repId);
     }
 
+    // Getter for returning list of reputations for owner.
     function getReputionIdWithAddress(address _owner) view external returns (uint256[])
     {
         return ownerToReputations[_owner];
-        // uint256[] storage allRepIds = ownerToReputations[_owner];
-
-        // uint256[] memory repIds;
-        // uint index = 0;
-
-        // for(uint i = 0; i < allRepIds.length; i++)
-        // {
-        //     if(allRepIds[i] != 0)
-        //     {   
-        //         repIds[index] = allRepIds[i];
-        //         index++;
-        //         //repIds.push(allRepIds[i]);
-        //     }
-        // }
-        // return repIds;
     }
 
     // function requestReputation(address _endorser) {}
 
+    // Getter for returning reputation with id.
     function getReputationWithId(uint256 _RepId) view external 
     returns 
     (uint64 _creationTime, uint32 _healthScore, uint32 _trustScore, uint32 _patienceScore)
