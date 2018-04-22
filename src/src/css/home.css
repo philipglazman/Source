@@ -1,0 +1,77 @@
+.home-page {
+    height: 80em;
+}
+.home-background-color {
+    height: 32em;
+    background: #67B26F;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4ca2cd, #67B26F);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4ca2cd, #67B26F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.home-splash-block {
+    margin-top: 1em;
+    /* width: 42em; */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+.home-splash-img {
+    width: 70%;
+}
+.home-title-main-text {
+    margin-top: -3.25em;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 1.45em;
+}
+.home-title-bot-text {
+    /* margin-top: -0.15em; */
+    /* color: rgb(34, 145, 159); */
+    color: rgb(54, 134, 104);
+    text-align: center;
+    font-size: 1.45em;
+}
+
+.home-page-space {
+    height: 18em;
+}
+
+.laptop-img-block {
+    text-align: center;
+    margin-bottom: 8em;
+}
+.laptop-text {
+    margin-bottom: 3em;
+    margin-left: -6em;
+    color: rgb(172, 80, 141);
+    font-size: 1.25em;
+}
+.laptop-img {
+    width: 70%;
+}
+
+.home-nav-box-top {
+    height: 3.5em;
+    background-color: #34b3d3;
+    color: white;
+    font-size: 1.25em;
+    padding-top: 1em;
+    padding-left: 4em;
+}
+.home-nav-card {
+    cursor: pointer;
+    margin-top: 1em;
+    border-width: 0.1em;
+    border-style: solid;
+    border-color: #34b3d3 !important; 
+}
+.home-page-rep-main-text {
+    font-size: 1.2em;
+    color: #34b3d3;
+    height: 6em;
+    padding-top: 2em;
+}
+.home-page-icon {
+    font-size: 2.25em !important;
+    margin-top: -0.1em;
+    margin-left: 1em;
+}
