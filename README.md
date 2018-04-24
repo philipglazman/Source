@@ -1,6 +1,6 @@
 # Source
 
-[logo]: doc/logo.jpeg
+(https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/000/635/178/datas/gallery.jpg)
 
 ## Inspiration
 Crowdsourcing is a powerful tool. We believe that if we can crowdsource the reputation of an individual, we can use their reputation as a proxy for credit score. This can work as new infrastructure in developing countries and a substitute to credit rating agencies in the developed world.
